@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================================================================= 
+   1. Global Reset and Base Styles
+   ================================================================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'OpenSans', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #373a3713;
+    background: url('image/red-and-black-.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* =================================================================
+   2. Main Content Area (weeks 1 to 3 info displayed here)
+   ================================================================= */
+.main.supporting {
+    flex: 1 1 60%;
+    min-width: 300px;
+}
+
+.main.supporting > div {
+    margin-bottom: 2rem;
+    padding: 1.8rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(11, 206, 20, 0.1);
+    background-color: #fff;
+    /* Removed transitions */
+}
+
+.main.supporting > div:hover {
+    /* No change on hover */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main.supporting > div:nth-child(1) {
+    border-left: 6px solid #2a9d8f;
+    background-color: #e0f2f1;
+}
+
+.main.supporting > div:nth-child(2) {
+    border-left: 6px solid #e76f51;
+    background-color: #fdecea;
+    font-style: italic;
+}
+
+.main.supporting > div:nth-child(3) {
+    border-left: 6px solid #264653;
+    background-color: #e7edf3;
+}
+
+.main.supporting > div:nth-child(4) {
+    border-left: 6px solid #8c9e4a;
+    background-color: #e7edf3;
+}
+
+.main.supporting h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.main.supporting p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #121312;
+}
+
+/* =================================================================
+   3. Sidebar Styles (weeks 4 and 5 related links and info)
+   ================================================================= */
+.sidebar {
+    flex: 1 1 30%;
+    background-color: #d7eaf9; /* replaced gradient with solid color */
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.07);
+    font-size: 0.95rem;
+    color: #e5e9e4;
+}
+
+.sidebar h3.select,
+.sidebar h3.archives,
+.sidebar h3.resources {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #991d07e5;
+    border-bottom: 2px solid #070c06;
+    padding-bottom: 0.3rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+    color: #160404;
+    font-weight: 600;
+    display: inline-block;
+    /* Removed transition */
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a:focus {
+    color: #1a3db1;
+    text-decoration: underline;
+}
+
+/* =================================================================
+   4. Intro Section (Highlighted site introduction or welcome message)
+   ================================================================= */
+.intro {
+    flex-basis: 100%;
+    margin-bottom: 2.5rem;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    background-color: #5e0606a9; /* replaced gradient with solid dark maroon */
+    color: #d64141;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.intro header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1.2px;
+    text-shadow: 1px 1px 3px rgba(238, 248, 238, 0.4);
+}
+
+.intro header h2 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.intro .summary p,
+.intro .preamble p {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    color: #e9f0f0;
+}
+
+.intro .preamble h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+/* =================================================================
+   5. Footer Styles
+   ================================================================= */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #070606;
+    background-color: rgba(129, 21, 21, 0.664);
+    padding: 1.2rem 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -2px 10px rgba(235, 5, 5, 0.3);
+}
+
+footer a {
+    color: #e2dada;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    /* Removed transition */
+}
+
+footer a:hover,
+footer a:focus {
+    background-color: #eaf0ed;
+    color: #0c0b0b;
+}
+
+/* =================================================================
+   6. Responsive Design
+   ================================================================= */
+@media (max-width: 900px) {
+    .page-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .main.supporting,
+    .sidebar {
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+}
+
